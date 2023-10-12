@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Daxlinecyrtf';
+  src: url("../fonts/DaxlineCyrTF-Light.eot") format("embedded-opentype"),
+  url("../fonts/DaxlineCyrTF-Light.woff") format("woff"),
+  url("../fonts/DaxlineCyrTF-Light.ttf") format("truetype"),
+  url("../fonts/DaxlineCyrTF-Light.svg") format("svg");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Daxlinecyrtf';
+  src: url("../fonts/DaxlineCyrTF-Thin.eot") format("embedded-opentype"),
+  url("../fonts/DaxlineCyrTF-Thin.woff") format("woff"),
+  url("../fonts/DaxlineCyrTF-Thin.ttf") format("truetype"),
+  url("../fonts/DaxlineCyrTF-Thin.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Daxlinecyrtf';
+  src: url("../fonts/DaxlineCyrTF-Regular.eot") format("embedded-opentype"),
+  url("../fonts/DaxlineCyrTF-Regular.woff") format("woff"),
+  url("../fonts/DaxlineCyrTF-Regular.ttf") format("truetype"),
+  url("../fonts/DaxlineCyrTF-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Daxlinecyrtf';
+  src: url("../fonts/DaxlineCyrTF-Bold.eot") format("embedded-opentype"),
+  url("../fonts/DaxlineCyrTF-Bold.woff") format("woff"),
+  url("../fonts/DaxlineCyrTF-Bold.ttf") format("truetype"),
+  url("../fonts/DaxlineCyrTF-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.bd {
+  border: 1px solid #f00;
+}
+
+@layer components {
+  html,
+  body {
+    @apply m-0 h-full w-full scroll-smooth p-0 font-daxline text-body/70;
+  }
+
+  #container{
+    @apply flex flex-col min-h-full;
+  }
+
+  .main{
+    @apply grow;
+  }
+
+  .footer{
+    @apply flex-shrink-0;
+  }
+
+  .container{
+    @apply mx-auto max-w-[1440px] px-4;
+  }
+
+  h2, .h2{
+    @apply text-4xl text-accent text-center;
+  }
+
+  h3, .h3{
+    @apply text-2xl text-body font-bold;
+  }
+
+  .text-lead{
+    @apply text-xl text-body;
+  }
+
+  .list-disc{
+    @apply ml-4;
+  }
+
+  .list-hyphen li{
+    @apply relative before:absolute before:top-0 before:left-0 before:content-['\2010'] pl-4;
+  }
+
+  .btn{
+    @apply px-8 py-4 tracking-wide rounded-full text-xl font-medium;
+  }
+
+  .breadcrumbs{
+    @apply flex items-center text-white/50;
+  }
+
+  .breadcrumbs a{
+    @apply text-white/50 hover:text-white transition after:content-['/'] after:px-2;
+  }
+
+
+
+}
+
+/* swiper carousel starts */
+.swiper-container,
+.swiper-slide {
+  @apply !h-auto;
+}
