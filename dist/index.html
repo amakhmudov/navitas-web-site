@@ -17,7 +17,7 @@
 
     <header class="header">
       <div class="container flex items-center justify-between py-4">
-        <a href="/" class="md-down:w-[52px] overflow-hidden">
+        <a aria-label="Naiton Business Suite" href="/" class="md-down:w-[52px] overflow-hidden">
           <svg viewBox="0 0 135 48" width="146" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M45.534 9.6c7.267 12.8-7.267 38.4-21.8 38.4C9.201 48-5.333 22.4 1.934 9.6c7.267-12.8 36.329-12.8 43.6 0Z" fill="#144D30"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M45.125 9.823c-1.878-3.308-5.18-5.543-8.591-6.958a35.761 35.761 0 0 0-25.6 0C7.52 4.279 4.22 6.515 2.344 9.823c-7.062 12.433 7.275 37.683 21.392 37.683 3.757 0 7.31-1.789 10.221-4.087a34.87 34.87 0 0 0 8.42-10.09 35.415 35.415 0 0 0 4.383-12.46c.498-3.713.244-7.737-1.635-11.046Z" fill="url(#a)"/>
@@ -66,7 +66,7 @@
           </ul>
         </nav>
 
-        <a href="tel:0208932732" class="btn flex items-center space-x-2 text-white bg-accent lg-down:p-0 lg-down:!bg-transparent">
+        <a href="tel:310208932732" class="btn flex items-center space-x-2 text-white bg-accent lg-down:p-0 lg-down:!bg-transparent">
           <svg viewBox="0 0 20 20" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:text-white/50 lg-down:w-8 h-8 lg-down:text-accent">
             <path d="M7.93376 1.67243C7.65948 1.65248 7.37845 1.68051 7.10286 1.76195L6.11654 2.05411C5.06551 2.36494 4.24431 3.19885 3.96647 4.25137C3.34956 6.5921 4.05528 9.36269 5.89193 12.4814C7.72599 15.5957 9.81584 17.575 12.1761 18.2211C13.239 18.512 14.3853 18.2341 15.1904 17.4862L15.9408 16.7904C16.7803 16.0109 16.9055 14.7125 16.2272 13.7899L15.1432 12.3178C14.5622 11.5285 13.5379 11.1925 12.596 11.4755L10.9001 11.9833C10.8289 12.0041 10.6585 11.9071 10.5103 11.779L10.5094 11.7782C10.2454 11.5486 9.87953 11.0845 9.48812 10.4208V10.42C9.06842 9.70719 8.88941 9.24102 8.81754 8.96573C8.74564 8.69031 8.76309 8.65681 8.7736 8.56371C8.77906 8.51726 8.80113 8.47422 8.8387 8.44001L8.83952 8.4392L10.1042 7.28279C10.8287 6.62043 11.0474 5.56195 10.6388 4.6713L9.8763 3.00788V3.00707C9.5173 2.22453 8.75636 1.73228 7.93376 1.67243ZM7.84342 2.91918C8.22601 2.94776 8.5783 3.17725 8.73942 3.52872L9.50277 5.19213C9.6875 5.59481 9.59486 6.0556 9.26107 6.36075L7.99642 7.51635C7.73716 7.75273 7.57137 8.07502 7.53174 8.42292V8.42374C7.52141 8.51522 7.49701 8.85545 7.60824 9.28148C7.71946 9.70752 7.94909 10.271 8.41064 11.0548H8.41146C8.84212 11.7852 9.24914 12.3401 9.68994 12.7231H9.69075C9.83391 12.847 10.4339 13.422 11.25 13.1837L11.2524 13.1829L12.9557 12.6726C13.398 12.5397 13.8709 12.6984 14.1366 13.0592L15.2205 14.5313C15.5275 14.9495 15.4739 15.518 15.0903 15.8741L14.34 16.5707C13.8601 17.0167 13.1476 17.1907 12.5057 17.015C10.5976 16.4928 8.7095 14.8022 6.9694 11.8474C5.22688 8.88856 4.68187 6.44132 5.17497 4.57038C5.33796 3.9529 5.83737 3.44034 6.47135 3.25284L7.45687 2.96068C7.58524 2.92275 7.7159 2.90965 7.84342 2.91918Z" fill="currentColor"/>
           </svg>
@@ -82,17 +82,29 @@
   <div class="relative ">
     <div class="swiper projects-swiper w-full">
       <div class="swiper-wrapper"><picture class="swiper-slide">
-<source srcset="assets/img/projects/kitemana/kitemana@2x.webp 2x, assets/img/projects/kitemana/kitemana.webp 1x" />
-<source srcset="assets/img/projects/kitemana/kitemana@2x.jpg 2x, assets/img/projects/kitemana/kitemana.jpg 1x" />
-<img src="assets/img/projects/kitemana/kitemana.jpg" alt="kitemana" width="1440" height="600" class="w-full object-cover" />
+<source media="(min-width: 562px)" srcset="assets/img/projects/kitemana/kitemana.webp 1x, assets/img/projects/kitemana/kitemana@2x.webp 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/kitemana/kitemana-mobile.webp 1x, assets/img/projects/kitemana/kitemana-mobile@2x.webp 2x" />
+
+<source media="(min-width: 562px)" srcset="assets/img/projects/kitemana/kitemana.jpg 1x, assets/img/projects/kitemana/kitemana@2x.jpg 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/kitemana/kitemana-mobile.jpg 1x, assets/img/projects/kitemana/kitemana-mobile@2x.jpg 2x" />
+
+<img src="assets/img/projects/kitemana/kitemana.jpg" srcset="assets/img/projects/kitemana/kitemana.jpg 1x, assets/img/projects/kitemana/kitemana@2x.jpg 2x" alt="kitemana" width="1440" height="600" class="w-full object-cover" />
 </picture><picture class="swiper-slide">
-<source srcset="assets/img/projects/gps-buddy/gps-buddy@2x.webp 2x, assets/img/projects/gps-buddy/gps-buddy.webp 1x" />
-<source srcset="assets/img/projects/gps-buddy/gps-buddy@2x.jpg 2x, assets/img/projects/gps-buddy/gps-buddy.jpg 1x" />
-<img src="assets/img/projects/gps-buddy/gps-buddy.jpg" alt="gps buddy" width="1440" height="600" class="w-full object-cover" />
+<source media="(min-width: 562px)" srcset="assets/img/projects/gps-buddy/gps-buddy.webp 1x, assets/img/projects/gps-buddy/gps-buddy@2x.webp 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/gps-buddy/gps-buddy-mobile.webp 1x, assets/img/projects/gps-buddy/gps-buddy-mobile@2x.webp 2x" />
+
+<source media="(min-width: 562px)" srcset="assets/img/projects/gps-buddy/gps-buddy.jpg 1x, assets/img/projects/gps-buddy/gps-buddy@2x.jpg 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/gps-buddy/gps-buddy-mobile.jpg 1x, assets/img/projects/gps-buddy/gps-buddy-mobile@2x.jpg 2x" />
+
+<img src="assets/img/projects/gps-buddy/gps-buddy.jpg" srcset="assets/img/projects/gps-buddy/gps-buddy.jpg 1x, assets/img/projects/gps-buddy/gps-buddy@2x.jpg 2x" alt="gps-buddy" width="1440" height="600" class="w-full object-cover" />
 </picture><picture class="swiper-slide">
-<source srcset="assets/img/projects/vanDijk/van-dijk@2x.webp 2x, assets/img/projects/vanDijk/van-dijk.webp 1x" />
-<source srcset="assets/img/projects/vanDijk/van-dijk@2x.jpg 2x, assets/img/projects/vanDijk/van-dijk.jpg 1x" />
-<img src="assets/img/projects/vanDijk/van-dijk.jpg" alt="vanDijk" width="1440" height="600" class="w-full object-cover" />
+<source media="(min-width: 562px)" srcset="assets/img/projects/van-dijk/van-dijk.webp 1x, assets/img/projects/van-dijk/van-dijk@2x.webp 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/van-dijk/van-dijk-mobile.webp 1x, assets/img/projects/van-dijk/van-dijk-mobile@2x.webp 2x" />
+
+<source media="(min-width: 562px)" srcset="assets/img/projects/van-dijk/van-dijk.jpg 1x, assets/img/projects/van-dijk/van-dijk@2x.jpg 2x" />
+<source media="(max-width: 560px)" srcset="assets/img/projects/van-dijk/van-dijk-mobile.jpg 1x, assets/img/projects/van-dijk/van-dijk-mobile@2x.jpg 2x" />
+
+<img src="assets/img/projects/van-dijk/van-dijk.jpg" srcset="assets/img/projects/van-dijk/van-dijk.jpg 1x, assets/img/projects/van-dijk/van-dijk@2x.jpg 2x" alt="van-dijk" width="1440" height="600" class="w-full object-cover" />
 </picture></div>
     </div>
 
@@ -129,7 +141,7 @@
 
  <picture class="block">
   <source srcset="../assets/img/naiton-oopbp.webp 2x, ../assets/img/naiton-oopbp.webp 1x" />
-  <img src="../assets/img/naiton-oopbp.png" alt="naiton - optimization of operational business processes" class="w-full max-w-[80%] mx-auto object-cover" />
+  <img src="../assets/img/naiton-oopbp.png" width="1074" height="512" alt="naiton - optimization of operational business processes" class="w-full max-w-[80%] mx-auto object-cover" />
  </picture>
 
   <p class="text-center">
@@ -141,13 +153,13 @@
     <h2 class="text-white max-w-[80%] mx-auto">Would you like to get acquainted with Nation Business Suite without&nbsp;obligation?</h2>
 
     <div class="flex md-down:flex-col justify-center md:space-x-4 md-down:space-y-4">
-      <a href="tel:0208932732" class="btn md-down:mx-auto bg-white">Request a demo</a>
-      <a href="tel:0208932732" class="btn md-down:mx-auto bg-white">or call 020&nbsp;893&nbsp;2732</a>
+      <a href="tel:310208932732" class="btn md-down:mx-auto bg-white">Request a demo</a>
+      <a href="tel:310208932732" class="btn md-down:mx-auto bg-white">or call 020&nbsp;893&nbsp;2732</a>
     </div>
 
     <picture class="block">
       <source srcset="../assets/img/nbswo.webp 2x, ../assets/img/nbswo.webp 1x" />
-      <img src="../assets/img/nbswo.png" alt="would you like to get acquainted with Nation Business Suite without obligation" class="w-full max-w-[80%] mx-auto object-cover" />
+      <img src="../assets/img/nbswo.png" width="1070" height="856" alt="would you like to get acquainted with Nation Business Suite without obligation" class="w-full max-w-[80%] mx-auto object-cover" />
     </picture>
   </div>
 </div>
@@ -161,8 +173,8 @@
     <div class="w-full md:w-9/12">
       <ul class="grid grid-cols-4 md-down:grid-cols-2 gap-6">
         <li>
-          <a href="#" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 20" width="160" height="20" fill="none">
+          <a href="https://www.gps-buddy.com" target="_blank" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
+            <svg aria-label="gps buddy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 20" width="160" height="20" fill="none">
               <path fill="#2B60E7" d="M31.9 8.7h11.4c0 .5.1.7.1 1C43.4 15.6 39 20 33.1 20c-5.7 0-10.2-4.4-10.2-10.1 0-5.6 4.5-9.9 10.3-9.9 4.4 0 8.5 2.9 9.6 6.8h-5.5c-.9-1.6-2.4-2.5-4.2-2.5-3 0-5.2 2.3-5.2 5.4 0 3.6 2.2 6 5.6 6 2.2 0 3.8-1.2 4.2-3.1H32V8.7h-.1ZM44 19.6V.4h6.3c3.1 0 4.6.4 5.9 1.4 1.4 1.2 2.3 3 2.3 5.1 0 1.9-.8 3.8-2 5-1.3 1.2-2.9 1.7-5.6 1.7h-2.1v6H44Zm4.7-10.4h2c2.1 0 3.1-.7 3.1-2.2 0-1.6-1-2.3-3.3-2.3h-1.8v4.5ZM72 6h-4.9c-.2-1.3-.7-1.8-1.8-1.8-.9 0-1.7.7-1.7 1.5s.5 1.4 1.6 1.9l2.4 1.1c3.2 1.5 4.5 3 4.5 5.5 0 3.7-2.5 5.9-6.7 5.9-4.3 0-7-2.3-7-6.1v-.6h4.9c0 1.6.8 2.6 2 2.6 1.1 0 1.9-.8 1.9-1.8 0-.9-.6-1.5-2-2.1-1.2-.5-1.9-.8-2.2-.9-.9-.4-1.6-.8-2.3-1.4-1.2-1-1.9-2.5-1.9-4 0-3.2 3-5.7 6.7-5.7 2.1 0 4.1.8 5.2 2.2.9 1 1.2 1.8 1.3 3.7ZM80.1 8h-7.3v3.7h7.3V8ZM81.5 19.6V.4h5.9c3.2 0 4.5.3 5.5 1.1 1.1.9 1.8 2.4 1.8 4 0 1.7-.8 3.1-2.2 3.9 2.1.7 3.2 2.2 3.2 4.5 0 1.6-.6 3.1-1.8 4.2-1.4 1.4-2.7 1.7-6.3 1.7h-6.1v-.2Zm4.7-11.9h1.7c1.4 0 2.1-.5 2.1-1.5s-.6-1.5-2.1-1.5h-1.7v3Zm0 7.6h2.3c1.6 0 2.5-.6 2.5-1.8 0-1.2-.8-1.7-2.5-1.7h-2.3v3.5ZM96.1.4h4.9V12c0 2.5.7 3.6 2.5 3.6s2.5-1 2.5-3.6V.4h4.9V12c0 2.9-.5 4.4-1.9 5.9-1.4 1.4-3.2 2.1-5.5 2.1-2.2 0-4.2-.7-5.5-2-1.5-1.5-1.9-2.9-1.9-5.9V.4ZM111.8 19.6V.4h6.5c2.9 0 4.4.3 6.1 1.4.9.5 1.7 1.3 2.3 2.2 1.2 1.6 1.8 3.6 1.8 5.9 0 5.8-3.6 9.7-9.1 9.7h-7.6Zm4.9-4.3h2.1c3.1 0 4.7-1.8 4.7-5.2 0-3.4-1.7-5.4-4.7-5.4h-2.1v10.6ZM129.1 19.6V.4h6.5c2.9 0 4.4.3 6.1 1.4.9.5 1.7 1.3 2.3 2.2 1.2 1.6 1.8 3.6 1.8 5.9 0 5.8-3.6 9.7-9.1 9.7h-7.6Zm4.9-4.3h2.1c3.1 0 4.7-1.8 4.7-5.2 0-3.4-1.7-5.4-4.7-5.4H134v10.6Z"/>
               <path fill="#2B60E7" d="M149.4 19.6v-7L143.6.4h5.4l2.8 7.7 2.9-7.7h5.3l-5.7 12.2v7h-4.9ZM20 5.7l-.3-.6C18.6 3 16.9 1.3 14.9.3l-.7-.3H20v5.7ZM5.7 20H0v-5.7l.3.6c1.1 2.1 2.8 3.8 4.8 4.8l.6.3ZM10 1.9c-4.4 0-8.1 3.6-8.1 8.1H0C0 4.5 4.5 0 10 0v1.9ZM10 18.1c4.4 0 8.1-3.6 8.1-8.1H20c0 5.5-4.5 10-10 10v-1.9Z"/>
               <path fill="#2B60E7" d="M10 5.2c-2.6 0-4.8 2.1-4.8 4.8H3.3c0-3.7 3-6.7 6.7-6.7v1.9ZM10 14.8c2.6 0 4.8-2.1 4.8-4.8h1.9c0 3.7-3 6.7-6.7 6.7v-1.9Z"/>
@@ -172,8 +184,8 @@
         </li>
 
         <li>
-          <a href="#" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 48" width="156" height="48" fill="none">
+          <a href="https://www.kitemana.com" target="_blank" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
+            <svg aria-label="kitemana" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 48" width="156" height="48" fill="none">
               <path fill="#222" d="m21.847 46.823-10.33-10.425 8.721-8.765a.528.528 0 0 0 .127-.596.552.552 0 0 0-.51-.34H12.49a.458.458 0 0 0-.381.17l-5.8 5.785V27.25a.564.564 0 0 0-.548-.553H.551A.56.56 0 0 0 0 27.25V47.29a.563.563 0 0 0 .55.553H5.8a.56.56 0 0 0 .55-.553v-5.616l.72-.724 6.648 6.723a.63.63 0 0 0 .381.17h7.368a.56.56 0 0 0 .55-.553.475.475 0 0 0-.169-.469M28.54 26.697h-5.21a.56.56 0 0 0-.551.553V47.29a.564.564 0 0 0 .55.553h5.211a.56.56 0 0 0 .55-.553V27.25a.563.563 0 0 0-.55-.553ZM47.844 26.654H32.136a.56.56 0 0 0-.55.553v5.234a.563.563 0 0 0 .55.553h4.615v14.255a.564.564 0 0 0 .55.553h5.25a.56.56 0 0 0 .551-.553V32.995h4.742a.56.56 0 0 0 .55-.553v-5.235a.564.564 0 0 0-.55-.553ZM63.848 26.697H51.485a.56.56 0 0 0-.55.553V47.29a.563.563 0 0 0 .55.553h12.363a.56.56 0 0 0 .55-.553v-4.34a.564.564 0 0 0-.55-.553h-6.605v-2.595h5.761a.56.56 0 0 0 .551-.553v-4.383a.563.563 0 0 0-.55-.553h-5.762v-2.17h6.605a.56.56 0 0 0 .55-.554v-4.34a.564.564 0 0 0-.55-.553ZM88.532 26.697H86.16a.68.68 0 0 0-.381.128l-7.707 7.106-7.748-7.106a.517.517 0 0 0-.381-.128h-2.371a.56.56 0 0 0-.55.553V47.29a.563.563 0 0 0 .55.553h5.25a.56.56 0 0 0 .55-.553v-9.066l4.319 3.911a.572.572 0 0 0 .72 0l4.276-3.957v9.027a.563.563 0 0 0 .55.553h5.25a.56.56 0 0 0 .55-.553V27.25a.482.482 0 0 0-.507-.553M103.392 26.995a.513.513 0 0 0-.507-.298h-2.371a.583.583 0 0 0-.508.298l-9.315 20.041a.446.446 0 0 0 .042.51.487.487 0 0 0 .466.256h5.25a.55.55 0 0 0 .508-.34l1.058-2.298h7.454l1.059 2.297a.512.512 0 0 0 .507.298h5.25a.534.534 0 0 0 .466-.255.544.544 0 0 0 .042-.51l-9.401-20Zm.089 12.68h-3.429l1.735-3.362 1.694 3.362ZM131.718 26.697h-5.25a.558.558 0 0 0-.55.553v8.127l-8.469-8.51a.627.627 0 0 0-.381-.17h-2.116a.56.56 0 0 0-.551.553V47.29a.564.564 0 0 0 .551.553h5.249a.56.56 0 0 0 .551-.553v-8.17l8.468 8.554a.63.63 0 0 0 .381.17h2.16a.56.56 0 0 0 .55-.553V27.25a.633.633 0 0 0-.593-.553ZM155.936 47.036l-9.395-20.041a.519.519 0 0 0-.508-.298h-2.329a.583.583 0 0 0-.507.298l-9.32 20.041a.444.444 0 0 0 .043.51.481.481 0 0 0 .465.256h5.25a.546.546 0 0 0 .508-.34l1.058-2.298h7.455l1.058 2.297a.512.512 0 0 0 .508.298h5.25a.528.528 0 0 0 .465-.255.46.46 0 0 0 0-.468m-9.273-7.361h-3.429l1.735-3.362 1.694 3.362Z"/>
               <path fill="#222" d="m92.723 15.506.043-.043a.149.149 0 0 1 .042-.089.04.04 0 0 1 .013-.03.04.04 0 0 1 .03-.012c0-.043.043-.09.043-.128v-.248a.156.156 0 0 0-.043-.128c0-.043 0-.043-.043-.09a.042.042 0 0 0-.042-.042L86.246 1.38c-.043-.043-.043-.09-.089-.128l-.042-.043-.089-.089-.042-.043h-.043l-.043-.042h-.042A.154.154 0 0 0 85.738 1h-.043a.155.155 0 0 1-.126-.043h-.17a.154.154 0 0 0-.126.043c-.043 0-.089.043-.127.043h-.043a.041.041 0 0 0-.04.026.044.044 0 0 0-.002.016l-6.817 4.298-6.775-4.344a.148.148 0 0 1-.088-.043.042.042 0 0 1-.035-.042c-.043 0-.089-.043-.127-.043h-.05a.928.928 0 0 0-.339.043h-.042c-.043 0-.089.042-.127.042a.041.041 0 0 0-.04.027.042.042 0 0 0-.003.016.088.088 0 0 0-.088.089l-.043.043-.088.089-.028.034c0 .043-.042.043-.042.09L64.02 14.45a.81.81 0 0 0 .043 1.148l13.675 12.638c.043.042.09.042.127.088a.155.155 0 0 0 .127.043h.042c.043 0 .09 0 .09.043h.169a.38.38 0 0 0 .211-.043h.043a.22.22 0 0 0 .17-.089c.042-.042.088-.042.126-.089l13.845-12.637.043-.043c-.043.043 0 .043 0 0M85.738 4.017l4.318 8.723-5.761-3.617 1.443-5.106Zm-1.609-.426L82.816 8.23 79.81 6.315l4.32-2.724Zm-5.843 3.702 4.107 2.596-4.15 14.723-4.06-14.723 4.103-2.596Zm-4.573.936-1.312-4.68 4.36 2.724-3.047 1.956Zm-2.878-4.17 1.397 5.107-5.588 3.532 4.19-8.638ZM65.88 15.124l6.817-4.298 3.98 14.254-10.797-9.956Zm13.93 9.955 4.022-14.34 6.901 4.341-10.923 10Z"/>
             </svg>
@@ -181,14 +193,14 @@
         </li>
 
         <li>
-          <a href="#" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
+          <a href="https://vandijk-staircasesolutions.com" target="_blank" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
             <img src="../assets/img/vandijk-logo.png" viewBox="0 0 156 38" width="156" height="38" alt="vanDijk">
           </a>
         </li>
 
         <li>
-          <a href="#" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 44" width="156" height="44" fill="none">
+          <a href="https://energielive.nl" target="_blank" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
+            <svg aria-label="energielive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 44" width="156" height="44" fill="none">
               <path fill="#2F0051" d="M101.483 19.639c-4.886 0-8.001 3.216-8.001 7.682 0 4.704 3.084 7.83 8.276 7.83 2.238 0 4.768-.739 6.364-2.272a.152.152 0 0 0-.002-.218l-2.165-2.084a.152.152 0 0 0-.208 0c-.891.802-2.607 1.27-3.928 1.27-2.54 0-4.139-1.227-4.461-2.952a.15.15 0 0 1 .15-.175h11.441a.153.153 0 0 0 .152-.139c.519-5.952-2.617-8.942-7.618-8.942Zm3.856 6.074h-7.743a.15.15 0 0 1-.144-.196c.604-1.775 2.208-2.662 4.153-2.662 2.072 0 3.57.894 3.883 2.683a.15.15 0 0 1-.149.175Z"/>
               <path fill="#2F0051" fill-rule="evenodd" d="M91.415 35.327H89.53l-1.884.001-.005-14.784h3.77l.004 14.783Z" clip-rule="evenodd"/>
               <path fill="#2F0051" d="M87.325 16.486c0 2.828 4.397 2.828 4.397 0 0-2.829-4.397-2.829-4.397 0ZM85.465 20.732a.15.15 0 0 0-.028-.216l-2.505-1.846a.15.15 0 0 0-.207.026l-1.322 1.631a.15.15 0 0 1-.196.032c-1.014-.624-2.19-.762-3.34-.762-4.214 0-7.634 2.858-7.634 7.443 0 4.586 2.932 7.385 7.635 7.385 1.863 0 3.817.922 3.817 2.947s-1.68 3.156-3.817 3.156c-2.083 0-3.846-1.186-3.936-3.01a.151.151 0 0 0-.15-.146h-3.395a.152.152 0 0 0-.152.155c.084 3.872 3.323 6.395 7.633 6.395 4.367 0 7.544-2.5 7.544-6.55 0-1.807-.568-3.504-2.849-4.717a.15.15 0 0 1 .001-.265c2.257-1.162 2.909-3.6 2.909-5.35 0-1.568-.407-2.994-1.504-4.252a.15.15 0 0 1-.005-.193l1.501-1.863ZM77.868 31.12c-2.168 0-3.94-1.519-3.94-4.08 0-2.56 1.772-4.138 3.94-4.138 2.138 0 3.91 1.608 3.91 4.138 0 2.531-1.772 4.08-3.91 4.08ZM70.29 21.003c-.839-.764-2.288-1.32-3.793-1.32-1.437 0-2.9.237-4.035 1.777a.15.15 0 0 1-.27-.063l-.195-1.2a.15.15 0 0 0-.149-.127h-3.172a.15.15 0 0 0-.15.15v14.378c0 .083.067.15.15.15h3.425a.15.15 0 0 0 .15-.15v-7.591c0-2.71 1.802-3.722 3.757-3.722 1.146 0 1.835.288 2.546.84a.151.151 0 0 0 .227-.047l1.54-2.893a.15.15 0 0 0-.03-.182ZM48.713 19.64c-4.887 0-8.002 3.215-8.002 7.68 0 4.705 3.085 7.831 8.277 7.831 2.238 0 4.767-.738 6.363-2.272a.152.152 0 0 0-.001-.218l-2.166-2.084a.152.152 0 0 0-.208 0c-.89.802-2.606 1.27-3.927 1.27-2.541 0-4.139-1.227-4.461-2.952a.15.15 0 0 1 .149-.175h11.442a.153.153 0 0 0 .151-.139c.52-5.952-2.617-8.942-7.617-8.942Zm3.855 6.073h-7.742a.15.15 0 0 1-.144-.196c.604-1.775 2.208-2.662 4.153-2.662 2.072 0 3.57.894 3.883 2.684a.15.15 0 0 1-.15.174ZM32.349 19.833c-1.788 0-3.25.664-4.693 1.967a.18.18 0 0 1-.297-.113l-.183-1.487a.18.18 0 0 0-.178-.158h-2.99c-.1 0-.18.08-.18.18v1.306c.076 5.69-4.498 9.984-10.02 9.835-5.486-.148-9.832-4.25-9.84-9.84-.002-2.173.182-4.001 1.666-5.985a.09.09 0 0 1 .132-.015c2.11 1.82 5.956 3.081 8.658 3.079 4.043-.005 6.829-1.965 7.171-5.124.15-1.408-.304-2.844-1.28-4.044-1.175-1.447-2.945-2.387-4.857-2.58-3.203-.32-5.881.535-8.946 2.925-.06.047-.15.004-.149-.072.069-2.993 2.507-5.071 4.84-6.194a.178.178 0 0 0 .085-.236L10.002.505A.181.181 0 0 0 9.76.418C5.533 2.438 2.926 6.01 2.944 9.775a7 7 0 0 0 .603 2.815.087.087 0 0 1-.014.092C1.453 15.108.374 17.873.374 21.523c0 7.37 6.027 13.435 13.434 13.435 3.817 0 7.264-1.601 9.712-4.165a.18.18 0 0 1 .308.125v3.653c0 .099.08.18.18.18h3.336c.099 0 .18-.081.18-.18v-7.324c0-2.233 1.557-4.109 3.848-4.109 2.382 0 3.634 1.698 3.634 3.93v7.503c0 .099.08.18.18.18h3.366c.1 0 .18-.081.18-.18v-7.532c0-4.615-2.84-7.206-6.383-7.206ZM8.107 12.875c2.298-1.869 4.217-2.907 7.01-2.623 2.142.219 3.212 1.902 3.083 2.861-.297 2.216-3.67 2.088-4.268 2.06-2.014-.09-4.345-.91-5.827-2.157a.092.092 0 0 1 .002-.14Z"/>
@@ -226,7 +238,7 @@
       <p>Do you have any questions or would you like to get acquainted with NAITON Business Suite?<br>Contact us without obligation.</p>
 
       <ul class="flex lg-down:flex-col items-center justify-center lg:space-x-12 lg-down:space-y-6">
-        <li>
+        <li class="hidden">
           <a href="mailto:" class="flex items-center lg:space-x-2 text-lg lg-down:flex-col lg-down:space-y-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14" width="17" height="14" fill="none" class="w-5 h-5 text-accent/70">
               <path fill="currentColor" d="M2.875.333A2.718 2.718 0 0 0 .167 3.042v7.916a2.718 2.718 0 0 0 2.708 2.709h11.25a2.718 2.718 0 0 0 2.708-2.709V3.042A2.718 2.718 0 0 0 14.125.333H2.875Zm0 1.25h11.25a1.45 1.45 0 0 1 1.458 1.459v.46L8.5 7.332l-7.083-3.83v-.46a1.45 1.45 0 0 1 1.458-1.459Zm-1.458 3.34 6.786 3.669a.625.625 0 0 0 .594 0l6.786-3.669v6.035a1.45 1.45 0 0 1-1.458 1.459H2.875a1.45 1.45 0 0 1-1.458-1.459V4.923Z"/>
@@ -236,7 +248,7 @@
         </li>
 
         <li>
-          <a href="mailto:" class="flex items-center lg:space-x-2 text-lg lg-down:flex-col lg-down:space-y-2">
+          <a href="tel:310208932732" class="flex items-center lg:space-x-2 text-lg lg-down:flex-col lg-down:space-y-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 18" width="14" height="18" fill="none" class="w-5 h-5 text-accent/70">
               <path fill="currentColor" d="M4.434.672a2.331 2.331 0 0 0-.831.09l-.986.292a3.141 3.141 0 0 0-2.15 2.197c-.617 2.341.088 5.112 1.925 8.23 1.834 3.115 3.924 5.094 6.284 5.74a3.198 3.198 0 0 0 3.014-.735l.75-.696c.84-.78.966-2.077.287-3l-1.084-1.472a2.333 2.333 0 0 0-2.547-.843l-1.696.508c-.071.021-.241-.076-.39-.204-.265-.23-.63-.694-1.022-1.358V9.42c-.42-.713-.599-1.179-.67-1.454-.072-.276-.055-.31-.044-.402a.197.197 0 0 1 .065-.124l1.265-1.157c.725-.663.943-1.721.535-2.612l-.763-1.663v-.001A2.318 2.318 0 0 0 4.434.672Zm-.09 1.247c.382.029.734.258.895.61l.764 1.663a.999.999 0 0 1-.242 1.169L4.496 6.516a1.45 1.45 0 0 0-.464.907c-.01.092-.035.432.076.858s.341.99.803 1.774c.431.73.838 1.285 1.279 1.668.144.124.744.699 1.56.46h.002l1.704-.51a1.08 1.08 0 0 1 1.18.386l1.085 1.472c.306.418.253.987-.13 1.343l-.751.697c-.48.446-1.192.62-1.834.444-1.908-.522-3.796-2.213-5.537-5.168C1.727 7.89 1.182 5.441 1.675 3.57a1.906 1.906 0 0 1 1.296-1.317l.986-.292c.128-.038.259-.051.386-.042Z"/>
             </svg>

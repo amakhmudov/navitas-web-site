@@ -14,7 +14,4 @@ window.addEventListener("load", function () {
       prevEl: ".projects-navigation__prev",
     },
   });
-
-  // projectsMedia.controller.control = projectsInfo;
-  // projectsInfo.controller.control = projectsMedia;
 });
