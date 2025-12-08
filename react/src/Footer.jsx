@@ -1,8 +1,9 @@
-export default function Footer() {
+export default function Footer({ phoneNumber }) {
+  const title = "Contact";
   return (
     <>
       <section className="container footer py-12 space-y-12 text-white bg-body text-center">
-        <h2 className="text-white">Contact</h2>
+        <h2 className="text-white">{title}</h2>
 
         <div className="space-y-4">
           <p>
@@ -12,24 +13,15 @@ export default function Footer() {
           </p>
 
           <ul className="flex max-lg:flex-col items-center justify-center lg:space-x-12 max-lg:space-y-6">
-            <li className="hidden">
-              <a href="mailto:" className="flex items-center lg:space-x-2 text-lg max-lg:flex-col max-lg:space-y-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14" width="17" height="14" fill="none" className="w-5 h-5 text-accent/70">
-                  <path fill="currentColor" d="M2.875.333A2.718 2.718 0 0 0 .167 3.042v7.916a2.718 2.718 0 0 0 2.708 2.709h11.25a2.718 2.718 0 0 0 2.708-2.709V3.042A2.718 2.718 0 0 0 14.125.333H2.875Zm0 1.25h11.25a1.45 1.45 0 0 1 1.458 1.459v.46L8.5 7.332l-7.083-3.83v-.46a1.45 1.45 0 0 1 1.458-1.459Zm-1.458 3.34 6.786 3.669a.625.625 0 0 0 .594 0l6.786-3.669v6.035a1.45 1.45 0 0 1-1.458 1.459H2.875a1.45 1.45 0 0 1-1.458-1.459V4.923Z" />
-                </svg>
-                <span>Email us</span>
-              </a>
-            </li>
-
             <li>
-              <a href="tel:{{site.phone}}" className="flex items-center lg:space-x-2 text-lg max-lg:flex-col max-lg:space-y-2">
+              <a href={`tel:${phoneNumber}`} className="flex items-center lg:space-x-2 text-lg max-lg:flex-col max-lg:space-y-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 18" width="14" height="18" fill="none" className="w-5 h-5 text-accent/70">
                   <path
                     fill="currentColor"
                     d="M4.434.672a2.331 2.331 0 0 0-.831.09l-.986.292a3.141 3.141 0 0 0-2.15 2.197c-.617 2.341.088 5.112 1.925 8.23 1.834 3.115 3.924 5.094 6.284 5.74a3.198 3.198 0 0 0 3.014-.735l.75-.696c.84-.78.966-2.077.287-3l-1.084-1.472a2.333 2.333 0 0 0-2.547-.843l-1.696.508c-.071.021-.241-.076-.39-.204-.265-.23-.63-.694-1.022-1.358V9.42c-.42-.713-.599-1.179-.67-1.454-.072-.276-.055-.31-.044-.402a.197.197 0 0 1 .065-.124l1.265-1.157c.725-.663.943-1.721.535-2.612l-.763-1.663v-.001A2.318 2.318 0 0 0 4.434.672Zm-.09 1.247c.382.029.734.258.895.61l.764 1.663a.999.999 0 0 1-.242 1.169L4.496 6.516a1.45 1.45 0 0 0-.464.907c-.01.092-.035.432.076.858s.341.99.803 1.774c.431.73.838 1.285 1.279 1.668.144.124.744.699 1.56.46h.002l1.704-.51a1.08 1.08 0 0 1 1.18.386l1.085 1.472c.306.418.253.987-.13 1.343l-.751.697c-.48.446-1.192.62-1.834.444-1.908-.522-3.796-2.213-5.537-5.168C1.727 7.89 1.182 5.441 1.675 3.57a1.906 1.906 0 0 1 1.296-1.317l.986-.292c.128-.038.259-.051.386-.042Z"
                   />
                 </svg>
-                <span>+31&nbsp;(0)20&nbsp;893&nbsp;2732</span>
+                <span>{phoneNumber}</span>
               </a>
             </li>
 
