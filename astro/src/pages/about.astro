@@ -1,9 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import About from '../components/About.jsx';
-const phone = "310208932732";
+import Layout from "../layouts/Layout.astro";
+import ContentSection from "../components/ContentSection.astro";
+import CTASection from "../components/CTASection.astro";
+import db from "../data/db.json";
+
+const imageMap: Record<string, { imageWidth: number; imageHeight: number }> = {
+  niafferp: { imageWidth: 840, imageHeight: 435 },
+  "naiton-oopbp": { imageWidth: 1074, imageHeight: 512 },
+  odmwacpac: { imageWidth: 840, imageHeight: 402 },
+};
+
+const sections = db.aboutSections.map((section) => ({
+  ...section,
+  imageId: section.id,
+  ...(imageMap[section.id] ?? { imageWidth: 840, imageHeight: 400 }),
+}));
 ---
 
-<Layout title="Naiton Business Suite - About">
-  <About phone={phone} client:load />
+<Layout
+  title="About Naiton | Full-fledged ERP comparable to SAP and Navision"
+  description="Comparable to Navision, SAP, Dynamics or Oracle, but cheaper, unprecedentedly flexible and very user-friendly. Learn how Naiton can transform your business."
+>
+  <div class="container">
+    <div class="flex items-center justify-between text-white py-9 px-4 bg-accent">
+      <p class="text-white h2">About Naiton</p>
+
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li><span>About Naiton</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="container py-12 max-md:text-center">
+    {
+      sections.map((section) => (
+        <div data-lazy>
+          <ContentSection {...section} />
+        </div>
+      ))
+    }
+
+    <div data-lazy>
+      <div class="flex max-lg:flex-wrap md:gap-x-6 max-lg:space-y-6">
+        <div class="w-full lg:w-3/12"></div>
+        <div class="w-full space-y-12 lg:w-9/12">
+          <p>
+            Naiton's software is now used by hundreds of customers, with thousands of users. No
+            costs are charged for the software modules and no (monthly) license fees are charged.
+            How is that possible? Ask us!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mt-12 border-t" />
+
+    <div data-lazy>
+      <CTASection title="Would you like to get acquainted with Nation Business Suite without obligation?" />
+    </div>
+  </section>
 </Layout>

@@ -1,9 +1,252 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Solutions from '../components/Solutions.jsx';
-const phone = "310208932732";
+import Layout from "../layouts/Layout.astro";
+import SolutionSection from "../components/SolutionSection.astro";
+import SuccessCaseSection from "../components/SuccessCaseSection.astro";
+import CTASection from "../components/CTASection.astro";
+
+// Solution icons — imported as raw SVG strings at build time
+import emailIcon from "../assets/icons/solutions/email.svg?raw";
+import imacIcon from "../assets/icons/solutions/imac.svg?raw";
+import tasksIcon from "../assets/icons/solutions/tasks.svg?raw";
+import contactIcon from "../assets/icons/solutions/contact.svg?raw";
+import slaIcon from "../assets/icons/solutions/sla.svg?raw";
+import personnelIcon from "../assets/icons/solutions/personnel.svg?raw";
+import vacanciesIcon from "../assets/icons/solutions/vacancies.svg?raw";
+import scheduleIcon from "../assets/icons/solutions/schedule.svg?raw";
+import leaveIcon from "../assets/icons/solutions/leave.svg?raw";
+import timeIcon from "../assets/icons/solutions/time.svg?raw";
+import inventoryIcon from "../assets/icons/solutions/inventory.svg?raw";
+import locationIcon from "../assets/icons/solutions/location.svg?raw";
+import updatesIcon from "../assets/icons/solutions/updates.svg?raw";
+import licenseIcon from "../assets/icons/solutions/license.svg?raw";
+import hostingIcon from "../assets/icons/solutions/hosting.svg?raw";
+
+const group1 = [
+  {
+    id: "crm",
+    title: "CRM",
+    subtitle: "Client Relation Management",
+    items: [
+      {
+        iconRaw: emailIcon,
+        title: "Email module",
+        bullets: [
+          "General mail and Personal mail",
+          "Link emails to customers and/or files",
+          "Easy access sharing",
+          "Convert email to task, assignment or ticket",
+        ],
+      },
+      {
+        iconRaw: imacIcon,
+        title: "IMAC; Install - Move - Add - Change",
+        bullets: [
+          "Each relationship / customer has their own card",
+          "Establish connections between relations / customers / assignments",
+          "Example: Ticket (at Lidl) hanging under a customer (DN)",
+          "Multiple email addresses per relationship",
+          "History per relationship; who, what, where, notifications, assignments, tickets, solutions, etc.",
+        ],
+      },
+      {
+        iconRaw: tasksIcon,
+        title: "Tasks, assignments and tickets",
+        bullets: [
+          "Internal assignment of tasks/assignments to resources (people, vehicles and equipment), with time slotting and optimal suggestions",
+          "Feedback to customers / Possibility of escalation",
+          "Log customer issues",
+        ],
+      },
+      {
+        iconRaw: contactIcon,
+        title: "Contact moments (Dossier formation)",
+        bullets: [
+          "Recording conversations - VOIP - Call actions",
+          "Link to orders, invoices, tasks and payments",
+          "Campaigns with phases and question paths, Acquisition and Periodic contact",
+          "Conversion statistics",
+        ],
+      },
+      {
+        iconRaw: slaIcon,
+        title: "SLA's",
+        bullets: [
+          "Variable SLAs per customer, different urgency levels",
+          "Deadlines are determined based on SLA and urgency level",
+          "Deadlines provide certain urgency/priority",
+          "SLA's partially determine pricing",
+        ],
+      },
+    ],
+  },
+  {
+    id: "hrm",
+    title: "HRM",
+    subtitle: "Human Resource Management",
+    items: [
+      {
+        iconRaw: personnelIcon,
+        title: "Personnel management",
+        bullets: [
+          "General user information",
+          "Assigning roles",
+          "Access to certain companies",
+          "Skills",
+        ],
+      },
+      {
+        iconRaw: vacanciesIcon,
+        title: "Vacancies / Applicants",
+        bullets: [
+          "Management of vacancies",
+          "Applicant management",
+          "Status of applicants within a job offer",
+          "Also for internal applications",
+        ],
+      },
+      {
+        iconRaw: scheduleIcon,
+        title: "Work schedules",
+        bullets: [
+          "Schedule based on contract",
+          "Schedule based on planning",
+          "National holidays",
+          "Calculation of vacation days",
+          "Adjustable per day",
+          "Easy to copy",
+        ],
+      },
+      {
+        iconRaw: leaveIcon,
+        title: "Sickness absence / leave",
+        bullets: [
+          "Sick leave procedures",
+          "Leave requests with approval",
+          "Feedback to employees via the intranet",
+          "Immediately visible in the planning board for other employees",
+        ],
+      },
+      {
+        iconRaw: timeIcon,
+        title: "Time registration",
+        bullets: [
+          "Time clock logic with tags",
+          "Registration option via intranet",
+          "Enter the type of work yourself",
+          "Compare with planned and contractual hours",
+          "Contract management",
+          "Durations",
+          "Integration with committees",
+          "Integration with time registration",
+        ],
+      },
+    ],
+  },
+];
+
+const group2 = [
+  {
+    id: "wms",
+    title: "WMS Module",
+    subtitle: "Warehouse Management",
+    items: [
+      {
+        iconRaw: inventoryIcon,
+        title: "Inventory management",
+        bullets: [
+          "Multiple inventory locations - Vehicles can also be an inventory location",
+          'Note: Based on "Iron stock" vehicle, we can create a pick list to get stock in the vehicle back up to standard → When order picking, send the items directly from Naiton via Post / UPS / DHL to a location (immediately correct location or mechanic\'s home address)',
+          'Determine required order quantities (suggestion) based on current Tickets and "Iron stocks" (Min / Max signals)',
+          "Basis for purchasing / production",
+          "Determining the value of stock",
+          "Movements and the historical stock",
+        ],
+      },
+      {
+        iconRaw: locationIcon,
+        title: "Where is the article in question located? What is its status?",
+        bullets: [
+          "Which warehouse, which vehicle?",
+          "Piece or whole? → Send for repair",
+          "Defective? → Repair center",
+        ],
+      },
+    ],
+  },
+  {
+    id: "licences",
+    title: "Licences",
+    subtitle: "Updates, Licences and Modules",
+    items: [
+      {
+        iconRaw: updatesIcon,
+        title: "All customers will receive new updates",
+        bullets: [
+          "Users can update in 1 to 2 minutes",
+          "Updates can also be done centrally via an admin",
+          "No frozen outdated versions",
+          "Posting updates in consultation",
+        ],
+      },
+      {
+        iconRaw: licenseIcon,
+        title: "License model and SLA (Service Level Agreement)",
+        bullets: [
+          "All necessary modules and licenses, for all users",
+          "So no license per user and no license per module",
+          "Including the App",
+          "No extra costs for using the App, no strip list principle",
+          "Unlimited use of the software within the group of companies with which we have entered into the agreement",
+        ],
+      },
+      {
+        iconRaw: hostingIcon,
+        title: "Hosting",
+        bullets: [
+          "Incl. power and data consumption and firewalls",
+          "Backup and roll-back facilities",
+          "Hot swappable drives",
+        ],
+      },
+    ],
+  },
+];
 ---
 
-<Layout title="Naiton Business Suite - Solutions">
-  <Solutions phone={phone} client:load />
+<Layout
+  title="Naiton Solutions | CRM, HRM, WMS and Licensing modules"
+  description="Naiton offers a complete suite of business modules: CRM for client management, HRM for HR processes, WMS for warehouse management, and flexible licensing with no per-user fees."
+>
+  <div class="container">
+    <div class="px-4 py-9 text-white bg-accent flex items-center justify-between">
+      <p class="h2 text-white">Solutions</p>
+
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li><span>Solutions</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-lazy>
+    <section class="container pt-12 pb-6 max-md:text-center">
+      {group1.map((s, i) => <SolutionSection {...s} showDivider={i < group1.length - 1} />)}
+    </section>
+  </div>
+
+  <div data-lazy>
+    <SuccessCaseSection />
+  </div>
+
+  <div data-lazy>
+    <section class="container pt-12 pb-6 max-md:text-center">
+      {group2.map((s, i) => <SolutionSection {...s} showDivider={i < group2.length - 1} />)}
+    </section>
+  </div>
+
+  <div data-lazy>
+    <section class="container">
+      <CTASection title="Would you like to get acquainted with Nation Business Suite without obligation?" />
+    </section>
+  </div>
 </Layout>

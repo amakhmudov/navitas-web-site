@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
+import { fetchDb } from "@/lib/api.js";
 import ContentSection from "@/components/ContentSection.jsx";
 import CTASection from "@/components/CTASection.jsx";
 import Error from "@/components/Error.jsx";
@@ -35,48 +36,15 @@ const sectionImages = {
 };
 
 export default function About() {
-  const [sections, setSections] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: dbData, isLoading, error } = useQuery({ queryKey: ["db"], queryFn: fetchDb });
 
-  useEffect(() => {
-    const controller = new AbortController();
+  if (isLoading) return <Loader />;
+  if (error) return <Error error={error} />;
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data/db.json", { signal: controller.signal });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const jsonData = await response.json();
-        const sectionsWithImages = jsonData.aboutSections.map((section) => ({
-          ...section,
-          image: sectionImages[section.id],
-        }));
-        setSections(sectionsWithImages);
-        setError(null);
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err);
-          setSections(null);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-
-    return () => controller.abort();
-  }, []);
-
-  if (isLoading || !sections) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <Error error={error} />;
-  }
+  const sections = dbData.aboutSections.map((section) => ({
+    ...section,
+    image: sectionImages[section.id],
+  }));
 
   return (
     <>
@@ -95,7 +63,7 @@ export default function About() {
         </div>
       </div>
 
-      <section className="container py-12 md-down:text-center">
+      <section className="container py-12 max-md:text-center">
         {sections.map((section) => (
           <LazySection key={section.id}>
             <ContentSection {...section} />
@@ -103,7 +71,7 @@ export default function About() {
         ))}
 
         <LazySection>
-          <div className="flex lg-down:flex-wrap md:gap-x-6 lg-down:space-y-6">
+          <div className="flex max-lg:flex-wrap md:gap-x-6 max-lg:space-y-6">
             <div className="w-full lg:w-3/12"></div>
             <div className="w-full space-y-12 lg:w-9/12">
               <p>Naiton's software is now used by hundreds of customers, with thousands of users. No costs are charged for the software modules and no (monthly) license fees are charged. How is that possible? Ask us!</p>

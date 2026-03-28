@@ -1,0 +1,17 @@
+---
+interface Props {
+  iconRaw: string;
+  title: string;
+  bullets: string[];
+}
+
+const { iconRaw, title, bullets } = Astro.props;
+---
+
+<li class="flex flex-col space-y-3 p-6 max-lg:px-0">
+  <span class="text-accent max-md:mx-auto" set:html={iconRaw} />
+  <p class="text-lead">{title}</p>
+  <ul class="list-disc">
+    {bullets.map((bullet) => <li>{bullet}</li>)}
+  </ul>
+</li>

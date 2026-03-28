@@ -3,19 +3,13 @@ import HRMItems from "@/components/solutions/HRMItems.jsx";
 import WMSItems from "@/components/solutions/WMSItems.jsx";
 import LicencesItems from "@/components/solutions/LicencesItems.jsx";
 
-const componentMap = {
-  CRMItems,
-  HRMItems,
-  WMSItems,
-  LicencesItems,
-};
+export { CRMItems, HRMItems, WMSItems, LicencesItems };
 
-export default function SolutionSection({ title, subtitle, Component, showDivider = true }) {
-  const ItemsComponent = componentMap[Component];
+export default function SolutionSection({ title, subtitle, Component: ItemsComponent, showDivider = true }) {
 
   return (
     <>
-      <div className="flex lg-down:flex-wrap md:gap-x-6 lg-down:space-y-6">
+      <div className="flex max-lg:flex-wrap md:gap-x-6 max-lg:space-y-6">
         <div className="w-full lg:w-3/12">
           <h3 className="flex flex-col">
             {title}

@@ -9,7 +9,10 @@ export default function LazySection({ children, rootMargin = "0px", className = 
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Stop observing once visible
+          // Intentional one-shot: React Router unmounts/remounts pages on each
+          // navigation, so each visit creates a fresh component instance and
+          // the fade-in naturally resets without needing the observer to re-trigger.
+          observer.disconnect();
         }
       },
       {
@@ -32,10 +35,6 @@ export default function LazySection({ children, rootMargin = "0px", className = 
       style={{
         opacity: isVisible ? 1 : 0,
         transition: "opacity 0.6s ease-out",
-        // Prevent layout shift by ensuring content is always rendered
-        visibility: isVisible ? "visible" : "hidden",
-        // Use content-visibility for better performance
-        contentVisibility: isVisible ? "visible" : "auto",
       }}
     >
       {children}

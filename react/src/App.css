@@ -75,10 +75,6 @@
   font-display: swap;
 }
 
-.bd {
-  border: 1px solid #f00;
-}
-
 @layer components {
   html,
   body {
@@ -107,10 +103,6 @@
 
   .footer {
     @apply flex-shrink-0;
-  }
-
-  .container {
-    @apply mx-auto max-w-[1440px] px-4;
   }
 
   h2,
@@ -156,19 +148,15 @@
   }
 }
 
-@layer utilities {
-  .container {
-    @apply mx-auto max-w-[1440px] px-4;
-  }
+.container {
+  @apply mx-auto max-w-[1440px] px-4;
 }
 
-/* Prevent layout shifts */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* swiper carousel starts */
 .swiper-container,
 .swiper-slide {
   @apply !h-auto;

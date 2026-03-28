@@ -1,36 +1,77 @@
 ---
-  import "../styles/global.css";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import db from "../data/db.json";
+
 interface Props {
-  title: string;
-  description?: string;
-  phone?: string;
+title: string;
+description?: string;
 }
-const { title ="Naiton Business Suite - Explore Naiton", description="Naiton - online and offline sales with your internal business processes. We work on an ongoing process, based on your specific situation", phone="310208932732" } = Astro.props;
 
-const pathname = Astro.url.pathname;
+const {
+title,
+description = "Naiton Business Suite – a full-fledged ERP, CRM, HRM and WMS software platform. Cheaper, unprecedentedly flexible and very user-friendly.",
+} = Astro.props;
 
-import Footer from "../components/Footer.jsx";
-import Header from "../components/Header.jsx";
+const { contact } = db;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://www.naiton.nl");
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <div id="container">
-      <Header phone={phone} pathname={pathname} client:load />
 
-      <main class="main">
-        <slot />
-      </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
 
-      <Footer phone={phone} client:load />
-    </div>
-  </body>
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content="/images/naiton-logo.svg" />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#268646" />
+  <link rel="preload" href="/fonts/DaxlineCyrTF-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/DaxlineCyrTF-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <slot name="head" />
+</head>
+
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded">Skip to content</a>
+  <h1 class="sr-only">Naiton Business Suite</h1>
+  <Header pathname={Astro.url.pathname} phone={contact.phone} phoneDisplay={contact.phoneDisplay} />
+  <main id="main-content" class="main">
+    <slot />
+  </main>
+  <Footer phone={contact.phone} />
+
+  <!-- Lazy-reveal: fade-in sections when they scroll into view -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).style.opacity = "1";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0 },
+    );
+
+    document.querySelectorAll("[data-lazy]").forEach((el) => {
+      (el as HTMLElement).style.opacity = "0";
+      (el as HTMLElement).style.transition = "opacity 0.6s ease-out";
+      observer.observe(el);
+    });
+  </script>
+</body>
+
 </html>

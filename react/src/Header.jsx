@@ -1,51 +1,14 @@
 import clsx from "clsx";
 import { Link, useLocation } from "react-router";
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import Error from "@/components/Error.jsx";
 import Loader from "@/components/Loader.jsx";
 import Logo from "@/Logo.jsx";
 import PhoneIcon from "@/assets/img/icons/phone.svg?react";
+import { fetchDb } from "@/lib/api.js";
 
-function Navigation({ pathname }) {
-  const [menuItems, setMenuItems] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data/db.json", { signal: controller.signal });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const jsonData = await response.json();
-        setMenuItems(jsonData.menuItems);
-        setError(null);
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err);
-          setMenuItems(null);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-
-    return () => controller.abort();
-  }, []);
-
-  if (isLoading || !menuItems) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <Error error={error.message} />;
-  }
-
+// Pure presentational — receives menu items from the parent query
+function Navigation({ pathname, menuItems }) {
   return (
     <ul className="flex items-center space-x-2 md:space-x-12">
       {menuItems.map((item) => (
@@ -61,6 +24,7 @@ function Navigation({ pathname }) {
 
 export default function Header() {
   const { pathname } = useLocation();
+  const { data, isLoading, error } = useQuery({ queryKey: ["db"], queryFn: fetchDb });
 
   return (
     <>
@@ -71,13 +35,19 @@ export default function Header() {
           <Logo />
 
           <nav>
-            <Navigation pathname={pathname} />
+            {isLoading && <Loader />}
+            {error && <Error error={error.message} />}
+            {data?.menuItems && <Navigation pathname={pathname} menuItems={data.menuItems} />}
           </nav>
 
-          <a href="tel:310208932732" className="btn flex items-center space-x-2 text-white bg-accent lg-down:p-0 lg-down:!bg-transparent">
-            <PhoneIcon className="lg-down:text-accent lg-down:w-6 lg-down:h-6" />
-
-            <span className="lg-down:hidden">020&nbsp;893&nbsp;2732</span>
+          <a
+            href={`tel:${data?.contact?.phone ?? "+31208932732"}`}
+            className="btn flex items-center space-x-2 text-white bg-accent max-lg:p-0 max-lg:!bg-transparent"
+          >
+            <PhoneIcon className="max-lg:text-accent max-lg:w-6 max-lg:h-6" />
+            <span className="max-lg:hidden">
+              {data?.contact?.phoneDisplay ?? "020\u00a0893\u00a02732"}
+            </span>
           </a>
         </div>
       </header>

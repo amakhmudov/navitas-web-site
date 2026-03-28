@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  paragraphs: string[];
+  imageAlt: string;
+  imageId: string;
+  imageWidth: number;
+  imageHeight: number;
+}
+
+const { title, paragraphs, imageAlt, imageId, imageWidth, imageHeight } = Astro.props;
+---
+
+<div class="flex max-lg:flex-wrap md:gap-x-6 max-lg:space-y-6">
+  <div class="w-full lg:w-3/12">
+    <h3>{title}</h3>
+  </div>
+
+  <div class="w-full space-y-12 lg:w-9/12">
+    <div class="space-y-3">
+      {paragraphs.map((text) => <p>{text}</p>)}
+    </div>
+
+    <picture class="block">
+      <source
+        srcset={`/images/${imageId}.webp 1x, /images/${imageId}@2x.webp 2x`}
+        type="image/webp"
+      />
+      <img
+        src={`/images/${imageId}.png`}
+        srcset={`/images/${imageId}.png 1x, /images/${imageId}@2x.png 2x`}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class="object-cover w-full"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  </div>
+</div>
+<hr class="my-12 border-t" />

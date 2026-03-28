@@ -34,7 +34,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <p>&copy;&nbsp;Copyright Naiton, 2023</p>
+        <p>&copy;&nbsp;Copyright Naiton, {new Date().getFullYear()}</p>
       </section>
     </>
   );

@@ -1,5 +1,5 @@
-import { lazy, Suspense, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router";
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router";
 
 import "@/App.css";
 import Header from "@/Header.jsx";
@@ -13,26 +13,6 @@ const LazyContact = lazy(() => import("@/pages/Contact.jsx"));
 const LazyNotFound = lazy(() => import("@/pages/NotFound.jsx"));
 
 export default function App() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Enable View Transitions API for navigation
-    if (document.startViewTransition) {
-      const handleClick = (e) => {
-        const link = e.target.closest("a");
-        if (link && link.origin === location.origin) {
-          e.preventDefault();
-          const href = link.getAttribute("href");
-          document.startViewTransition(() => {
-            navigate(href);
-          });
-        }
-      };
-      document.addEventListener("click", handleClick);
-      return () => document.removeEventListener("click", handleClick);
-    }
-  }, [navigate]);
-
   return (
     <>
       <Header />

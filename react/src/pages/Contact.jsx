@@ -26,7 +26,7 @@ export default function Contact() {
         <section className="container py-12">
           <ul className="flex max-lg:flex-col max-lg:space-y-6 items-start justify-center">
             <li className="lg:px-12">
-              <a href="tel:3110208932732" className="flex lg:flex-col md:text-center items-center lg:space-y-3 max-lg:space-x-3">
+              <a href="tel:+31208932732" className="flex lg:flex-col md:text-center items-center lg:space-y-3 max-lg:space-x-3">
                 <PhoneIcon className="text-accent size-9 shrink-0" />
                 <span className="h3">020&nbsp;893&nbsp;2732</span>
               </a>

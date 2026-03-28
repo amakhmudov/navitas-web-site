@@ -1,0 +1,52 @@
+---
+interface Project {
+id: string;
+alt: string;
+}
+
+interface Props {
+projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="swiper projects-swiper w-full" id="projectsSwiper">
+  <div class="swiper-wrapper">
+    {
+    projects.map((project, index) => (
+    <div class="swiper-slide">
+      <picture>
+        <source media="(min-width: 562px)" srcset={`/images/projects/${project.id}/${project.id}.webp 1x, /images/projects/${project.id}/${project.id}@2x.webp 2x`} type="image/webp" />
+        <source media="(max-width: 560px)" srcset={`/images/projects/${project.id}/${project.id}-mobile.webp 1x, /images/projects/${project.id}/${project.id}-mobile@2x.webp 2x`} type="image/webp" />
+        <source media="(min-width: 562px)" srcset={`/images/projects/${project.id}/${project.id}.jpg 1x, /images/projects/${project.id}/${project.id}@2x.jpg 2x`} />
+        <source media="(max-width: 560px)" srcset={`/images/projects/${project.id}/${project.id}-mobile.jpg 1x, /images/projects/${project.id}/${project.id}-mobile@2x.jpg 2x`} />
+        <img src={`/images/projects/${project.id}/${project.id}.jpg`} alt={project.alt} width="1440" height="600" class="w-full object-cover" loading={index <=1 ? "eager" : "lazy" } fetchpriority={index===0 ? "high" : index===1 ? "low" : undefined} decoding={index===0 ? "sync" : "async" } />
+      </picture>
+    </div>
+    ))
+    }
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Keyboard, Mousewheel } from "swiper/modules";
+  import "swiper/css";
+
+  new Swiper("#projectsSwiper", {
+    modules: [Navigation, Keyboard, Mousewheel],
+    speed: 900,
+    loop: false,
+    spaceBetween: 24,
+    mousewheel: { releaseOnEdges: true },
+    slidesPerView: 1,
+    keyboard: true,
+    preloadImages: false,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: ".projects-navigation__next",
+      prevEl: ".projects-navigation__prev",
+    },
+  });
+</script>

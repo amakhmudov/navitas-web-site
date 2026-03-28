@@ -1,9 +1,115 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Home from '../components/Home.jsx';
-const phone = "310208932732";
+import CTASection from "../components/CTASection.astro";
+import ProjectsSwiper from "../components/ProjectsSwiper.astro";
+import db from "../data/db.json";
+
+const { projects, clients } = db;
+
+const clientExt = (id: string) => (id === "vandijk" ? "png" : "svg");
 ---
 
-<Layout>
-  <Home phone={phone} client:load />
+<Layout title="Naiton Business Suite – ERP, CRM, HRM & WMS for growing businesses" description="Naiton combines online and offline sales with your internal business processes. A full-fledged ERP platform – cheaper, more flexible and more user-friendly than SAP, Navision or Oracle.">
+  <!-- Projects slider -->
+  <section class="container">
+    <div class="relative">
+      <ProjectsSwiper projects={projects} />
+
+      <div class="absolute z-20 top-1/2 -translate-y-1/2 w-full flex justify-between">
+        <button type="button" class="projects-navigation__prev w-10 h-10 text-white bg-accent opacity-50 hover:opacity-100 cursor-pointer flex items-center justify-center disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-25 transition" aria-label="previous project">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+          </svg>
+        </button>
+
+        <button type="button" class="projects-navigation__next w-10 h-10 text-white bg-accent opacity-50 hover:opacity-100 cursor-pointer flex items-center justify-center disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-25 transition" aria-label="next project">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="container py-12 space-y-12 max-md:text-center">
+    <h2>Optimization of operational business&nbsp;processes</h2>
+
+    <div class="flex max-md:flex-wrap gap-x-6 mx-auto">
+      <div class="w-full md:w-3/12">
+        <h3>Based on standard and company-specific&nbsp;modules</h3>
+      </div>
+
+      <div class="w-full md:w-9/12 space-y-3">
+        <p class="text-lead">
+          Naiton combines online and offline sales with your internal business processes. We work on
+          an ongoing process, based on your specific situation.
+        </p>
+
+        <p>
+          Moreover, Naiton not only helps generate new business, we also specialize in client
+          retention. We retain regular customers and focus on repeat orders, which are more
+          cost-efficient than acquiring new customers. We use order histories and innovative customer
+          profiles.
+        </p>
+      </div>
+    </div>
+
+    <div data-lazy>
+      <picture class="block">
+        <source srcset="/images/naiton-oopbp.webp 1x, /images/naiton-oopbp@2x.webp 2x" type="image/webp" />
+        <img src="/images/naiton-oopbp.png" srcset="/images/naiton-oopbp.png 1x, /images/naiton-oopbp@2x.png 2x" width="1074" height="512" alt="naiton - optimization of operational business processes" class="w-full max-w-[80%] mx-auto object-cover" loading="lazy" decoding="async" />
+      </picture>
+    </div>
+
+    <p class="text-center">
+      <a href="/solutions/" class="btn text-white bg-accent">View Naiton solutions</a>
+    </p>
+
+    <div data-lazy>
+      <CTASection title="Would you like to get acquainted with Nation Business Suite without obligation?" />
+    </div>
+
+    <div data-lazy>
+      <div class="flex max-md:flex-wrap max-md:space-y-6">
+        <div class="w-full md:w-3/12">
+          <h3>Our Clients</h3>
+        </div>
+
+        <div class="w-full md:w-9/12">
+          <ul class="grid grid-cols-4 max-md:grid-cols-2 gap-6">
+            {
+            clients.map((client) => (
+            <li>
+              <a href={client.link} target="_blank" rel="noopener noreferrer" class="flex w-full h-full px-4 py-10 rounded bg-body/5 items-center justify-center hover:shadow-2xl duration-500 transition">
+                <img src={`/images/clients/${client.id}.${clientExt(client.id)}`} width="156" height="38" alt={client.name} loading="lazy" decoding="async" />
+              </a>
+            </li>
+            ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-t" />
+
+    <div data-lazy>
+      <div class="flex max-md:flex-wrap max-md:space-y-6">
+        <div class="w-full md:w-3/12">
+          <h3>Interesting fact</h3>
+        </div>
+
+        <div class="w-full md:w-9/12">
+          <p>
+            Managed from the Netherlands, with more than 30 permanent (international) developers,
+            English, German and Dutch-language support and maintenance. Internationally oriented
+            solutions; the package is multi-language, multi-currency, multi-business (intercompany
+            and intracompany)… but also international VAT payments, for example, are available on
+            request.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

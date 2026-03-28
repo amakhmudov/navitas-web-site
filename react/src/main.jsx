@@ -7,7 +7,14 @@ import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/components/Error.jsx";
 import App from "@/App.jsx";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Data is largely static; cache for 1 hour before allowing a background refetch
+      staleTime: 1000 * 60 * 60,
+    },
+  },
+});
 
 createRoot(document.getElementById("container")).render(
   <StrictMode>

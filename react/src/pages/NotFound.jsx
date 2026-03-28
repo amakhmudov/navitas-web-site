@@ -5,7 +5,7 @@ export default function NotFound() {
 
       <div className="space-y-3">
         <p>Sorry, the page you are looking for doesn't exist or has been moved.</p>
-        <p>You can use top navigation to navigate tto existing pages or click Naiton Business Suite logo to go homepage</p>
+        <p>You can use top navigation to navigate to existing pages or click Naiton Business Suite logo to go homepage</p>
       </div>
     </section>
   );

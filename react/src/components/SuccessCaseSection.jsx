@@ -7,13 +7,13 @@ export default function SuccessCaseSection() {
 
   return (
     <section className="container relative before:content-[''] before:absolute before:w-[calc(100%-2rem)] before:h-full before:top-0 before:bg-accent before:z-0 overflow-hidden">
-      <div className="py-12 relative space-y-12 bg-no-repeat bg-top md-down:bg-contain nbswo-bg">
+      <div className="py-12 relative space-y-12 bg-no-repeat bg-top max-md:bg-contain nbswo-bg">
         <div className="text-center space-y-2">
           <h2 className="text-white max-w-[80%] mx-auto">Success Case</h2>
           <p className="text-lead text-white">To give an impression of what is possible</p>
         </div>
 
-        <div className={clsx("relative md-down:px-8 text-white max-w-xl mx-auto space-y-3 overflow-hidden transition-all duration-1000", toggleDropdown || "max-h-80")}>
+        <div className={clsx("relative max-md:px-8 text-white max-w-xl mx-auto space-y-3 overflow-hidden transition-all duration-1000", toggleDropdown || "max-h-80")} aria-expanded={toggleDropdown}>
           <p>A funeral director orders a coffin via your website;</p>
 
           <ul className="list-hyphen space-y-3">
@@ -38,7 +38,7 @@ export default function SuccessCaseSection() {
           <p>In the meantime, all changes in all relevant modules are of course monitored and processed by the system. So, from ordering, through purchasing, inventory management, production, transport, up to and including invoice and financial processing such as forecasting and actual costing.</p>
 
           <div className="absolute left-0 bottom-0 w-full pt-12 bg-gradient-to-b via-accent from-transparent to-accent">
-            <button onClick={() => setToggleDropdown(!toggleDropdown)} className="flex items-center space-x-2 text-xl mx-auto cursor-pointer">
+            <button type="button" onClick={() => setToggleDropdown(!toggleDropdown)} className="flex items-center space-x-2 text-xl mx-auto cursor-pointer" aria-label={toggleDropdown ? "Show less" : "Show more"} aria-expanded={toggleDropdown}>
               <ChevronDown className={toggleDropdown ? "rotate-180" : ""} />
             </button>
           </div>

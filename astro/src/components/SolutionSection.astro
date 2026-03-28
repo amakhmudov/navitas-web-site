@@ -1,0 +1,35 @@
+---
+import SolutionItem from "./SolutionItem.astro";
+
+interface Item {
+  iconRaw: string;
+  title: string;
+  bullets: string[];
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  items: Item[];
+  showDivider?: boolean;
+}
+
+const { title, subtitle, items, showDivider = true } = Astro.props;
+---
+
+<div class="flex max-lg:flex-wrap md:gap-x-6 max-lg:space-y-6">
+  <div class="w-full lg:w-3/12">
+    <h3 class="flex flex-col">
+      {title}
+      <span class="text-xl font-normal">{subtitle}</span>
+    </h3>
+  </div>
+
+  <div class="w-full lg:w-9/12 space-y-12">
+    <ul class="grid md:grid-cols-2 md:-mt-5">
+      {items.map((item) => <SolutionItem {...item} />)}
+    </ul>
+  </div>
+</div>
+
+{showDivider && <hr class="border-t mt-6 mb-12" />}
